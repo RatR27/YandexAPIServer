@@ -33,13 +33,12 @@ public class YandexAPISender {
 
         //из-за ограничения попыток в API пришлось оставить рабочий вариант с промежуточной записью в файл
         //а не парсить по входному потоку
-        BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+        BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
         String inputLine;
         try(FileOutputStream out = new FileOutputStream("parse.xml")){
-            while ((inputLine = in.readLine()) != null) {
+            while ((inputLine = br.readLine()) != null) {
                 out.write(inputLine.getBytes());
             }
-            in.close();
         }
         try {
 //            hm = xmlParser.parsing(urlConnection.getInputStream());
