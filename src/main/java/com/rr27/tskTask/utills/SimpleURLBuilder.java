@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleURLBuilder {
 
-    //нихрена не подтянулись значения из пропетис, но и своим данными светить не буду)
+    //не подтянулись значения из пропертис, но и своим данными светить не буду)
     @Value("${yandex.api.key}")
     private static String key;
 
@@ -21,7 +21,6 @@ public class SimpleURLBuilder {
             "&groupby=attr%3D%22%22.mode%3Dflat.groups-on-page%3D10.docs-in-group%3D1"+
             "&page=1");
 
-    //дерьмо како-то но что поделать
     static {
         url.append("&user="+user);
         url.append("&key="+key);
