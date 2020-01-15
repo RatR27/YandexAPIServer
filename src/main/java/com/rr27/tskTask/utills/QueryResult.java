@@ -23,9 +23,7 @@ public class QueryResult {
         this.requestQuantity = requestQuantity;
     }
 
-    public QueryResult(Map.Entry<String, Integer> entry) {
-        this.domain = entry.getKey();
-        this.requestQuantity = entry.getValue();
+    public QueryResult() {
     }
 
     @Override

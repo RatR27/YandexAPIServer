@@ -34,7 +34,9 @@ public class SearchController {
         HashMap<String, Integer> hm = yandexAPIService.getResponseFromAPI(query);
         List<QueryResult> list = new ArrayList<>();
         for (Map.Entry<String, Integer> x: hm.entrySet()) {
-            QueryResult qr = new QueryResult(x);
+            QueryResult qr = new QueryResult();
+            qr.setDomain(x.getKey());
+            qr.setRequestQuantity(x.getValue());
             list.add(qr);
         }
 
