@@ -59,9 +59,7 @@ public class SearchTempController {
 
         List<QueryResult> list = new ArrayList<>();
         for (Map.Entry<String, Integer> x: hm.entrySet()) {
-            QueryResult qr = new QueryResult();
-            qr.setDomain(x.getKey());
-            qr.setRequestQuantity(x.getValue());
+            QueryResult qr = new QueryResult(x);
             list.add(qr);
         }
 
